@@ -36,11 +36,10 @@ type Payload struct {
 
 func main() {
 	// Set up the MongoDB client and connect to the database
-	// mongodb://ocistok:2BelasJuta$@dds-d9j719c71af16d941168-pub.mongodb.ap-southeast-5.rds.aliyuncs.com:3717,dds-d9j719c71af16d942147-pub.mongodb.ap-southeast-5.rds.aliyuncs.com:3717,dds-d9j719c71af16d943156-pub.mongodb.ap-southeast-5.rds.aliyuncs.com:3717/ocistok?replicaSet=mgset-1104029287&authSource=admin
 
 	// Use the SetServerAPIOptions() method to set the Stable API version to 1
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
-	opts := options.Client().ApplyURI("mongodb://ocistok:2BelasJuta$@dds-d9j719c71af16d941168-pub.mongodb.ap-southeast-5.rds.aliyuncs.com:3717,dds-d9j719c71af16d942147-pub.mongodb.ap-southeast-5.rds.aliyuncs.com:3717,dds-d9j719c71af16d943156-pub.mongodb.ap-southeast-5.rds.aliyuncs.com:3717/ocistok?replicaSet=mgset-1104029287&authSource=admin").SetServerAPIOptions(serverAPI)
+	opts := options.Client().ApplyURI("mongoaddress").SetServerAPIOptions(serverAPI)
 
 	//create context
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
